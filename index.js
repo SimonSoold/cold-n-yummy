@@ -1,24 +1,26 @@
-const express = require ('express');
+const express = require("express")
 const app = express()
-const PORT=process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 
+const bp = require("body-parser")
+
+app.use(bp.json())
+app.use(bp.urlencoded({ extennded: true }))
 
 // confa router
 const routes = require("./routes/routes")
 
-app.use(routes)
+app.use("/", routes)
 
 //
 
 require("dotenv").config()
 
-
 // middlewares
-const logger=require("./middleware/logger")
-const headers=require("./middleware/headers")
+const logger = require("./middleware/logger")
+const headers = require("./middleware/headers")
 
 app.use(express.json())
-
 
 // errors
 

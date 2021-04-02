@@ -12,6 +12,4 @@ router.post("/flavors", flavorsController.createFlavor)
 router.delete("/flavors/:id", flavorsController.deleteOne)
 router.patch("flavors/:id", flavorsController.updateFlavorById)
 
-
-
 module.exports = router
