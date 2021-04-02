@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 3000
 const bp = require("body-parser")
 
 app.use(bp.json())
-app.use(bp.urlencoded({ extennded: true }))
 
 // confa router
 const routes = require("./routes/routes")
